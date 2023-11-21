@@ -1,0 +1,30 @@
+<div class="head">
+    <h4><a href="/">Chefs </a>
+        <p> | </p>Platos <p> | </p><a class="addLink" href="/New">Agregar un Chef </a>
+        <p> | </p><a class="addLink" href="platos/New">Agregar un Plato</a>
+    </h4>
+</div>
+<h3>¡Mmm, echa un vistazo a nuestros sabrosos platos!</h3>
+<hr>
+<table class="table table-striped table-bordered">
+    <thead>
+        <th>Nombre</th>
+        <th>Chef</th>
+        <th>Sabor</th>
+        <th>Calorias</th>
+    </thead>
+    <tbody>
+        @if (ViewBag.AllPlatos != null)
+        {
+            @foreach (var x in ViewBag.AllPlatos)
+            {
+                <tr>
+                    <td>@x.Nombre</td>
+                    <td>@x.Creador.Nombre @x.Creador.Apellido</td>
+                    <td>@x.Sabor</td>
+                    <td>@x.Calorias</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

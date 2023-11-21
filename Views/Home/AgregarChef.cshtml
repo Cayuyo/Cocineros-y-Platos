@@ -1,0 +1,32 @@
+@model Chef
+
+
+<div class="head">
+    <h4><a href="/">Chefs </a>
+        <p> | </p><a href="/platos">Platos </a>
+        <p> | </p>Agregar un Chef
+        <p> | </p><a class="addLink" href="platos/New">Agregar un Plato</a>
+    </h4>
+</div>
+<h3>¡Agregar un CHEF!</h3>
+
+<form asp-action="CrearChef" asp-controller="Home" method="post">
+    <div class='contenido'>
+        <div class="row">
+            <label asp-for="Nombre">Nombre: </label>
+            <input asp-for="Nombre" required>
+        </div>
+        <div class="row">
+            <label asp-for="Apellido">Apellido:</label>
+            <input asp-for="Apellido" required>
+        </div>
+        <div class="row">
+            <label asp-for="Cumpleanos">Cumpleaños: </label>
+            <input type="date" asp-for="Cumpleanos" required>
+            <span asp-validation-for="Cumpleanos"></span>
+        </div>
+        <div class="row">
+            <input value="Agregar" class="btn btn-primary" type="submit">
+        </div>
+    </div>
+</form>
